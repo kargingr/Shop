@@ -1,0 +1,26 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
+    <h:head></h:head>
+    <h:body>
+        <h:form>
+            <h:outputText style="width: 100%; background-color: lavender; text-align: center;" value="Home"/>
+            <h:outputText id="otUserName" value="#{facade.userName}"/>
+            <h:outputText id="otModelName" value="  Model name: #{facade.modelName}"/>
+            <!--<h:messages style="color: red;"/>
+            <h:panelGrid columns="3">
+                <h:outputText value="Login:"/>
+                <h:inputText id="itUserID" required="true" value="user" requiredMessage="Fill please field Login"/>
+                <h:message for="itUserID"/>
+                <h:outputText value="Password"/>
+                <h:inputSecret id="isUserPassword" value="111111"  required="true" requiredMessage="Fill please field Password"/>
+                <h:message for="isUserPassword"/>
+                <h:commandButton id="btLogin" action="LoginAction" value="Login" />
+                <h:commandButton id="btRegister" action="RegisterAction" value="Shop" />
+                <h:commandButton id="btAdmin" action="AdminAction" value="Admin" />
+                <h:commandButton id="btShop" action="ShopAction" value="Shop" />
+            </h:panelGrid>-->
+        </h:form>
+    </h:body>
+</html>
