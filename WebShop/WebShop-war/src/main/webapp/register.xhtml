@@ -3,14 +3,77 @@
         "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
 <html xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:h="http://java.sun.com/jsf/html">
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:f="http://java.sun.com/jsf/core">
+
+<f:loadBundle basename="com.epam.bundle.i18n" var="bundle"/>
 
 <h:head>
     <title>Simple JSF Facelets page Demo</title>
 </h:head>
 
 <h:body>
-    Input text
+    <br/>
+    <h:form id="reg_form">
+
+        <h:panelGrid columns="3">
+            <h5>#{bundle['reg.first_name']}</h5>
+            <h:inputText id="first_name" value="#{userBean.firstName}" size="20" required="true">
+                <f:validateRequired/>
+            </h:inputText>
+            <h:message for="first_name" style="color:red"/>
+            <h5>#{bundle['reg.middle_name']}</h5>
+            <h:inputText id="middle_name" value="#{userBean.middleName}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="middle_name"/>
+            <h5>#{bundle['reg.last_name']}</h5>
+            <h:inputText id="last_name" value="#{userBean.lastName}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="last_name"/>
+            <h5>#{bundle['reg.dob']}</h5>
+            <h:inputText id="dob" value="#{userBean.dateOfBirth}" size="8" required="true">
+                <f:convertDateTime pattern="dd-MM-yyyy" />
+            </h:inputText>
+            <h:message for="dob"/>
+            <h5>#{bundle['reg.tel']}</h5>
+            <h:inputText id="tel" value="#{userBean.telephone}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="tel"/>
+            <h5>#{bundle['reg.email']}</h5>
+            <h:inputText id="email" value="#{userBean.email}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="email"/>
+            <h5>#{bundle['reg.login']}</h5>
+            <h:inputText id="login" value="#{userBean.login}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputText>
+            <h:message for="login"/>
+            <h5>#{bundle['reg.password']}</h5>
+            <h:inputSecret id="password" value="#{userBean.password}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputSecret>
+            <h:message for="password"/>
+            <h5>#{bundle['reg.secret_question']}</h5>
+            <h:inputTextarea id="secret_question" value="#{userBean.secretQuestion}" cols="17" rows="3" required="true">
+                <f:validateRequired />
+            </h:inputTextarea>
+            <h:message for="secret_question"/>
+            <h5>#{bundle['reg.secret_answer']}</h5>
+            <h:inputSecret id="secret_answer" value="#{userBean.secretAnswer}" size="20" required="true">
+                <f:validateRequired />
+            </h:inputSecret>
+            <h:message for="secret_answer"/>
+        </h:panelGrid>
+
+        <h:commandButton value="#{bundle['reg.register_btn']}" action="#{userBean.register}"/>
+    </h:form>
+    <br/>
+    <br/>
+    <h:outputText rendered="#{userBean.errorMessageEnabled}" value="#{bundle['reg.error']}" style="color: red"/>
 </h:body>
 
 </html>
