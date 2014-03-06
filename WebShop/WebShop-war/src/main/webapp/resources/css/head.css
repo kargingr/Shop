@@ -1,0 +1,12 @@
+#divHeadContent
+{
+    color: deepskyblue;
+    font-size: 25pt;
+    font-weight: bold;
+}
+
+#divHeadPaddingLeft
+{
+    float: left;
+    padding-left: 155px;
+}

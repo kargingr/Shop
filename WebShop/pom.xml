@@ -13,7 +13,7 @@
    <module>WebShop-war</module>
    <module>WebShop-jar</module>
    <module>ModelJPA-jar</module>
-     <module>security</module>
+   <module>Security-jar</module>
  </modules>
 
  <build>

@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+        "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:h="http://java.sun.com/jsf/html"
+      xmlns:ui="http://java.sun.com/jsf/facelets"
+      xmlns:f="http://java.sun.com/jsf/core">
+    <h:head>
+        <title><ui:insert name="mainTitle"></ui:insert></title>
+        <h:outputStylesheet library="css" name="mainStyle.css"/>
+        <h:outputStylesheet library="css" name="leftMenu.css"/>
+        <h:outputStylesheet library="css" name="leftPanel.css"/>
+        <h:outputStylesheet library="css" name="head.css"/>
+        <h:outputStylesheet library="css" name="footer.css"/>
+    </h:head>
+    <f:view>
+        <!--<h:form>-->
+            <div id="divMain">
+                <div id="divMainHeader"><ui:insert name="mainHeader"><ui:include src="head.xhtml"/></ui:insert></div>
+                <div id="divMainCenter">
+                    <div id="divMainLeftPanel"><ui:insert name="mainLeftPanel"><ui:include src="leftPanel.xhtml"/><!--<div style="text-align: center;">Place left panel here</div>--></ui:insert></div>
+                    <div id="divMainContent"><ui:insert name="mainContent"><div style="text-align: center;">Place content here</div></ui:insert></div>
+                </div>
+                <div id="divMainFooter"><ui:insert name="mainFooter"><ui:include src="footer.xhtml"/><!--<div style="text-align: center;">Place footer here</div>--></ui:insert></div>
+            </div>
+        <!--</h:form>-->
+    </f:view>
+</html>

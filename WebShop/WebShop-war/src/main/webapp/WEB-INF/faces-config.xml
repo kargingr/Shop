@@ -6,21 +6,21 @@
               version="2.0">
 
     <navigation-rule>
-        <from-view-id>register.xhtml</from-view-id>
+        <from-view-id>/pages/register.xhtml</from-view-id>
         <navigation-case>
             <from-action>#{userBean.register}</from-action>
             <from-outcome>LoginOrEmailNotUnique</from-outcome>
-            <to-view-id>register.faces</to-view-id>
+            <to-view-id>/pages/register.xhtml</to-view-id>
         </navigation-case>
         <navigation-case>
             <from-action>#{userBean.register}</from-action>
             <from-outcome>Success</from-outcome>
-            <to-view-id>registerSuccessfuly.faces</to-view-id>
+            <to-view-id>/pages/registerSuccessfuly.xhtml</to-view-id>
         </navigation-case>
     </navigation-rule>
     <!--<managed-bean>
         <managed-bean-name>facadeBean</managed-bean-name>
-        <managed-bean-class>com.epam.study.com.epam.webshop.FacadeBean</managed-bean-class>
+        <managed-bean-class>com.epam.study.webshop.FacadeBean</managed-bean-class>
         <managed-bean-scope>request</managed-bean-scope>
     </managed-bean>-->
 <!--    <navigation-rule>

@@ -1,0 +1,15 @@
+#divLeftMenu
+{
+    font-family: sans-serif;
+    color: #FF69B4;
+    font-size: 14pt;
+    font-weight: bold;
+    line-height: 24pt;
+    padding-left: 10px;
+}
+
+.linkButton
+{
+    color: #FF69B4;
+    text-decoration: none;
+}

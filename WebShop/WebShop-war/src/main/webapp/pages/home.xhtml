@@ -1,16 +1,18 @@
 <?xml version='1.0' encoding='UTF-8'?>
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core">
-    <h:head></h:head>
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:h="http://java.sun.com/jsf/html" xmlns:f="http://java.sun.com/jsf/core" xmlns:ui="http://java.sun.com/jsf/facelets">
+    <!--<h:head></h:head>-->
     <h:body>
-        <h:form>
+        <ui:composition template="/template/masterPageTemplate.xhtml">
+            <ui:define name="mainContent">
+                Home
+            </ui:define>
+        </ui:composition>
+        <!--<h:form>
             <h:outputText style="width: 100%; background-color: lavender; text-align: center;" value="Home"/>
             <h:outputText id="otUserName" value="#{facade.userName}"/>
-            <h:outputText id="otModelName" value="  Model name: #{facade.modelName}"/>
-            <br/>
-            <br/>
-            <h:link value="Register" outcome="/pages/register"/>
+            <h:outputText id="otModelName" value="  Model name: #{facade.modelName}"/>-->
             <!--<h:messages style="color: red;"/>
             <h:panelGrid columns="3">
                 <h:outputText value="Login:"/>
@@ -24,6 +26,6 @@
                 <h:commandButton id="btAdmin" action="AdminAction" value="Admin" />
                 <h:commandButton id="btShop" action="ShopAction" value="Shop" />
             </h:panelGrid>-->
-        </h:form>
+        <!--</h:form>-->
     </h:body>
 </html>

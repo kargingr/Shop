@@ -1,13 +1,16 @@
 package com.epam.study.webshop.user;
 
-import com.epam.study.webshop.security.EjbAccessor;
+import com.epam.study.webshop.ejb.*;
+//import com.epam.study.webshop.security.EjbAccessor;
+//import com.epam.study.webshop.ejb.SecurityEJB;
+//import com.epam.study.webshop.ejb.SecurityLocal;
 import com.epam.study.webshop.utils.PasswordEncoder;
-import com.epam.webshop.ejb.SecurityRemote;
-import com.epam.webshop.exception.LoginOrEmailNotUniqueException;
-import com.epam.webshop.users.Role;
-import com.epam.webshop.users.User;
+import com.epam.study.webshop.exception.LoginOrEmailNotUniqueException;
+import com.epam.study.webshop.users.Role;
+import com.epam.study.webshop.users.User;
 
 
+import javax.ejb.EJB;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.RequestScoped;
 import java.io.Serializable;
@@ -36,10 +39,8 @@ public class UserManagedBean implements Serializable {
     private String secretAnswer;
     private Set<Role> roles = new HashSet<Role>();
     private boolean errorMessageEnabled;
-
-    public UserManagedBean() {
-    }
-
+    @EJB
+    private SecurityLocal securityLocal;
 
     public int getId() {
         return id;
@@ -146,7 +147,8 @@ public class UserManagedBean implements Serializable {
         this.errorMessageEnabled = errorMessageEnabled;
     }
 
-    public String register() {
+    public String register()
+    {
         User user = new User();
         user.setFirstName(getFirstName());
         user.setMiddleName(getMiddleName());
@@ -159,11 +161,14 @@ public class UserManagedBean implements Serializable {
         user.setTelephone(getTelephone());
         user.setSecretQuestion(getSecretQuestion());
         user.setSecretAnswer(getSecretAnswer());
-        EjbAccessor ejbAccessor = new EjbAccessor();
-        SecurityRemote securityRemote = ejbAccessor.acquireSecurityRemote();
-        try {
-            securityRemote.register(user);
-        } catch (LoginOrEmailNotUniqueException e) {
+        //EjbAccessor ejbAccessor = new EjbAccessor();
+        //SecurityLocal securityLocal = ejbAccessor.acquireSecurityRemote();
+        try
+        {
+          securityLocal.register(user);
+        }
+        catch (LoginOrEmailNotUniqueException e)
+        {
             setErrorMessageEnabled(true);
             return "LoginOrEmailNotUnique";
         }

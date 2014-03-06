@@ -1,0 +1,66 @@
+html
+{
+    height: 100%;
+}
+
+body
+{
+    margin: 0px;
+    padding: 0px;
+    height: 100%;
+}
+
+#divMainHeader
+{
+    width: 100%;
+    height: 50px;
+    /*background-color: green;*/
+}
+
+#divMainLeftPanel
+{
+    /*background-color: red;*/
+    border: 2px solid #DFFFFF;
+    bottom: 1px;
+    float: left;
+    height: 100%;
+    left: 1px;
+    position: absolute;
+    width: 150px;
+    text-decoration: no-underline;
+}
+
+#divMainContent
+{
+    /*background-color: grey;*/
+    border: 2px solid #DFFFFF;
+    bottom: 1px;
+    height: 100%;
+    left: 160px;
+    position: absolute;
+    right: 5px;
+}
+
+#divMain
+{
+    height: 100%;
+    position: relative;
+}
+
+#divMainCenter
+{
+    position: absolute;
+    top: 50px;
+    width: 100%;
+    /*background-color: yellow;*/
+    bottom: 20px;
+}
+
+#divMainFooter
+{
+    position: absolute;
+    width: 100%;
+   /* background-color: blue;*/
+    bottom: 0;
+    height: 20px;
+}
